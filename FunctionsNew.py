@@ -13,7 +13,7 @@ def Shekel(x):
     for j in range(2):
       sumi = 0
       for i in range(len(x)):
-        sumi = sumi + (x[i]+a[i,j])**6
+        sumi = sumi + (x[i]+a[j,i])**6
       sumj = sumj + 1.0 / (j+ sumi)
     fun =1.0 / (1/500.0+ sumj)  
     return fun
