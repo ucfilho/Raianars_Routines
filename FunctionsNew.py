@@ -39,7 +39,7 @@ def PenaltyOne(x):
             sumu = sumu # it could be done without put this case
         
     y0 = 1 + 1.0/4*(x[0]+1)
-    yn = 1 + 1.0/4*(x[n]+1)
+    yn = 1 + 1.0/4*(x[n-1]+1)
     fun = pi/n*(10*(np.sin(pi*y0))**2 + sumy + (yn-1)**2 ) + sumu 
     return fun
 
@@ -57,7 +57,7 @@ def PenaltyTwo(x):
         else:
             sumu = sumu # it could be done without put this case
         
-    fun = 0.1*( (np.sin(3*pi*x[0]))**2 + sumx + (x[n]-1)*(1+(np.sin(2*pi*x[n]))**2) ) + sumu 
+    fun = 0.1*( (np.sin(3*pi*x[0]))**2 + sumx + (x[n-1]-1)*(1+(np.sin(2*pi*x[n-1]))**2) ) + sumu 
     return fun
 # f(x)=0 x=(0,0) [−1.28, 1.28]
 
