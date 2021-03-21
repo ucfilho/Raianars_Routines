@@ -37,7 +37,7 @@ def PenaltyOne(x):
             sumu = sumu + k*(-x[i]-a)**m
         else:
             sumu = sumu # it could be done without put this case
-        sumu=sumu+np.random.random()
+        
     y0 = 1 + 1.0/4*(x[0]+1)
     fun = pi/n*(10*(np.sin(pi*y0))**2 + sumy + sumu )
     return fun
