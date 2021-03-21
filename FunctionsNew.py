@@ -20,7 +20,29 @@ def Shekel(x):
     # Shekel's Foxholes Function 
     # Range of initial points: -65.536 <= xj <= 65.536 , j=1,2
     # Global minima: (x1,x2)=(-31.97833,-31.97833)
-    # f(x1,x2)=0.998003837794449325873406851315
+    # f(x1,x2)=0.998003837794449325873406851315 obs dim =30 optimum close to zero..
+    
+def PenaltyOne(x):
+    n = len(x); a = 10 ; k = 100 ; m =4; pi = np.pi;
+    sumy=0
+    sumu=0
+    
+    for i in range((n-1)):
+        yi = 1 + 1.0/4*(x[i]+1)
+        yip = 1 + 1.0/4*(x[i+1]+1)
+        sumy=sumy+(yi-1)**2*(1+10*(np.sin(pi*yip))**2)
+        if( x[i] > a):
+            sumu = sumu + k*(x[i]-a)**m
+        elif( x[i] < -a):
+            sumu = sumu + k*(-x[i]-a)**m
+        else:
+            sumu = sumu # it could be done without put this case
+        sumu=sumu+np.random.random()
+    y0 = 1 + 1.0/4*(x[0]+1)
+    fun = pi/n*(10*(np.sin(pi*y0))**2 + sumy + sumu )
+    return fun
+
+# f(x)=0 x=(0,0) [−1.28, 1.28]
 
 def Noisy_Quartic(x):
     sumx4=0
