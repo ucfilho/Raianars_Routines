@@ -61,6 +61,22 @@ def PenaltyTwo(x):
     return fun
 # f(x)=0 x=(0,0) [−1.28, 1.28]
 
+def Kowalik(x):
+    n = 11; 
+    a= [0.1957,0.1947,0.1735,0.1600,   0.0844,0.0627,0.0456,0.0342,    0.0323,0.0235,0.0246]
+    b=[0.25, 0.5, 1,2,4,6,8,10,12,14,16]
+    sumx=0
+    
+    for i in range(n):
+        bi = 1/b[i]
+        upfrac = x[0]*(bi**2+bi*x[1])
+        downfrac = bi**2+bi*x[2]+x[3]
+        sumx=sumx+ (a[i] -upfrac/downfrac)**2
+ 
+    fun = sumx 
+    return fun
+# f(x)=0 x=(0,0) [−1.28, 1.28]
+
 def Noisy_Quartic(x):
     sumx4=0
     i=0
