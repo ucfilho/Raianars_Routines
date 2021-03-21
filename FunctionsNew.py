@@ -39,9 +39,26 @@ def PenaltyOne(x):
             sumu = sumu # it could be done without put this case
         
     y0 = 1 + 1.0/4*(x[0]+1)
-    fun = pi/n*(10*(np.sin(pi*y0))**2 + sumy + sumu )
+    yn = 1 + 1.0/4*(x[n]+1)
+    fun = pi/n*(10*(np.sin(pi*y0))**2 + sumy + (yn-1)**2 ) + sumu 
     return fun
 
+def PenaltyTwo(x):
+    n = len(x); a = 5 ; k = 100 ; m =4; pi = np.pi;
+    sumx=0
+    sumu=0
+    
+    for i in range((n-1)):
+        sumx=sumx+(x[i]-1)**2*(1+(np.sin(3*pi*x[i+1]))**2)
+        if( x[i] > a):
+            sumu = sumu + k*(x[i]-a)**m
+        elif( x[i] < -a):
+            sumu = sumu + k*(-x[i]-a)**m
+        else:
+            sumu = sumu # it could be done without put this case
+        
+    fun = 0.1*( (np.sin(3*pi*x[0]))**2 + sumx + (x[n]-1)*(1+(np.sin(2*pi*x[n]))**2) ) + sumu 
+    return fun
 # f(x)=0 x=(0,0) [−1.28, 1.28]
 
 def Noisy_Quartic(x):
