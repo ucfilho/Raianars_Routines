@@ -49,7 +49,7 @@ def PenaltyTwo(x):
     sumu=0
     
     for i in range((n-1)):
-        sumx=sumx+(x[i]-1)**2*(1+(np.sin(3*pi*x[i+1]))**2)
+        sumx=sumx+   (x[i]-1)**2*(1+(np.sin(3*pi*x[i+1]))**2)
         if( x[i] > a):
             sumu = sumu + k*(x[i]-a)**m
         elif( x[i] < -a):
@@ -57,7 +57,7 @@ def PenaltyTwo(x):
         else:
             sumu = sumu # it could be done without put this case
         
-    fun = 0.1*( (np.sin(3*pi*x[0]))**2 + sumx + (x[n-1]-1)*(1+(np.sin(2*pi*x[n-1]))**2) ) + sumu 
+    fun = 0.1*( (np.sin(3*pi*x[0]))**2 + sumx + (x[n-1]-1)**2*(1+(np.sin(2*pi*x[n-1]))**2) ) + sumu 
     return fun
 # f(x)=0 x=(0,0) [−1.28, 1.28]
 
