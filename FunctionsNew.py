@@ -118,11 +118,22 @@ def Schwefel_221(x):
     return maximum
 # f(x)=0 x=(0,0) [−100, 100]
 
+
+
 def Schwefel_226(x):
     summ=0
     for i in range(len(x)):
         new=x[i]*np.sin((abs(x[i]))**0.5)
         summ=summ+new
+    return summ
+
+def Schwefel_226_aD(x):
+    summ=0
+    a=418.982887272433799807913601398
+    for i in range(len(x)):
+        new=x[i]*np.sin((abs(x[i]))**0.5)
+        summ=summ-new
+    summ = a*len(x) + summ
     return summ
 
 def Schwefel_12(x):
