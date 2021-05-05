@@ -96,7 +96,12 @@ def Noisy_Quartic(x):
     return sumx4
 # f(x)=0 x=(0,0) [−1.28, 1.28]
 
-
+def Schwefel(x):
+    summ=0
+    for i in range(len(x)):
+        new=x[i]*np.sin((abs(x[i]))**0.5)
+        summ=summ+new
+    return (418.982887272433799807913601398*len(x)-summ)
 
 def Schwefel_222(x):
     sumx=0
@@ -123,7 +128,7 @@ def Schwefel_221(x):
 def Schwefel_226(x):
     summ=0
     for i in range(len(x)):
-        new=x[i]*np.sin((abs(x[i]))**0.5)
+        new=x[i]*np.sin(((abs(x[i]))**0.5))
         summ=summ+new
     return summ
 
@@ -131,9 +136,9 @@ def Schwefel_226_aD(x):
     summ=0
     a=418.982887272433799807913601398
     for i in range(len(x)):
-        new=x[i]*np.sin((abs(x[i]))**0.5)
-        summ=summ-new
-    summ = a*len(x) + summ
+        new=x[i]*np.sin(((abs(x[i]))**0.5))
+        summ=summ+new
+    summ = a*len(x) - summ
     return summ
 
 def Schwefel_12(x):
