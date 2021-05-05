@@ -12,7 +12,7 @@ def  Michalewicz_revisited(x):
      m =10
      for xi in x:
         i = i + 1
-        sum = sum + sin(xi) * (sin(i*xi**2/pi))^(2*m)
+        sum = sum + sin(xi) * (sin(i*xi**2/pi))**(2*m)
      return sum
 
 def Shekel(x):
