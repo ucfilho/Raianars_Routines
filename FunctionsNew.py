@@ -6,6 +6,17 @@ from math import *
 
 ################################### 
 
+def shubert_revisited(x):
+    n = len(x)
+    scores = 0
+    for i in range(n):
+        for k in range(5):
+          j = k +1
+          scores = scores + j * np.sin(((j + 1) * x[i]) + j)
+
+    return scores
+
+
 def  Michalewicz_revisited(x):
      sum = 0.0
      i = 0
