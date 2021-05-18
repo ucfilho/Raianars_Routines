@@ -15,6 +15,10 @@ def Intervalo(dim,fchoice):
     if(fchoice=='PenaltyTwo'):
         MAX=np.repeat(50,dim) 
         MIN=np.repeat(-50,dim)    
+      
+    if(fchoice=='Schwefel_223'):
+        MAX=np.repeat(10,dim) 
+        MIN=np.repeat(-10,dim)      
 
     if(fchoice=='Noisy_Quartic'):
         MAX=np.repeat(1.28,dim)
