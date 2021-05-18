@@ -5,6 +5,12 @@ from math import *
 # Funções self-tuning implementation
 
 ################################### 
+def Schwefel_223(x):
+    n = len(x)
+    scores = 0
+    for i in range(n):
+        scores = scores + x[i]**10.0
+    return scores
 
 def shubert_revisited(x):
     n = len(x)
